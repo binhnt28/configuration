@@ -1,7 +1,7 @@
 " File: .vimrc
 " Author: Nguyen Thai Binh
 " Description: Vim configuration file
-" Last Modified: February 5, 2018
+" Last Modified: May 8, 2018
 "
 "
 "---------- Plugin Settings ----------
@@ -25,16 +25,20 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 
 " YouCompleteMe
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " jedi-vim
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
+
+" vim-rails
+Plugin 'tpope/vim-rails'
 
 " Tagbar 
 " Be aware that this plugin depends on ctags
 Plugin 'majutsushi/tagbar'
 
 " Powerline
+"Plugin 'powerline/powerline'
 Plugin 'vim-airline/vim-airline'
 
 " Snippet
@@ -65,17 +69,8 @@ let g:tagbar_width = 30
 set laststatus=2
 set noshowmode
 
-" YouCompleteMe settings
-"let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-"let g:ycm_confirm_extra_conf = 0
-"let g:ycm_show_diagnostics_ui = 0
-"let g:ycm_autoclose_preview_window_after_completion = 1
-"let g:ycm_filetype_blacklist = {
-"    \ 'python' : 1,
-"    \}
-
 " jedi-vim
-autocmd FileType python setlocal completeopt-=preview
+"autocmd FileType python setlocal completeopt-=preview
 
 " delimitMate settings
 let delimitMate_expand_cr = 1
@@ -96,6 +91,8 @@ let g:UltiSnipsExpandTrigger="<c-b>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" YouCompleteMe settings
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 "---------- Basic Vim Settings ----------
 
@@ -107,8 +104,6 @@ set wildmenu
 
 set noswapfile
 set nobackup
-
-set history=10
 
 " wrap lines 
 set wrap
@@ -161,10 +156,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
 
-" YouCompleteMe shortcuts for C-family languages
-"nnoremap <silent> <leader>gt :YcmCompleter GetType<CR>
-"nnoremap <silent> <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 "---------- Surround Shortcuts ----------
 
 " Surround a word(s) with double-quotes
@@ -209,10 +200,3 @@ map <silent> <F2> :NERDTreeToggle<CR>
 
 " Map Tagbar toggle
 map <silent> <F3> :TagbarToggle<CR>
-
-"---------- GVim Setting ----------
-if has("gui_running")
-    set guifont=Hack\ 11
-    set guioptions-=T " hide toolbar
-    set guioptions-=r " hide scrollbar
-endif
