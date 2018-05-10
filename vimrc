@@ -32,14 +32,19 @@ Plugin 'Valloric/YouCompleteMe'
 
 " vim-rails
 Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-dispatch'
+
+" Git wrapper
+Plugin 'tpope/vim-fugitive'
 
 " Tagbar 
 " Be aware that this plugin depends on ctags
 Plugin 'majutsushi/tagbar'
 
 " Powerline
-"Plugin 'powerline/powerline'
-Plugin 'vim-airline/vim-airline'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Plugin 'vim-airline/vim-airline'
 
 " Snippet
 Plugin 'SirVer/ultisnips'
@@ -122,7 +127,6 @@ set relativenumber
 
 " Color settings
 colorscheme molokai
-"set background=dark
 
 " Syntax highlight 
 syntax on
