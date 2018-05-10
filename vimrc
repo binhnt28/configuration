@@ -46,6 +46,9 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Plugin 'vim-airline/vim-airline'
 
+" indentLine
+Plugin 'Yggdroot/indentLine'
+
 " Snippet
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -79,6 +82,9 @@ set noshowmode
 
 " delimitMate settings
 let delimitMate_expand_cr = 1
+
+" indentLine settings
+let g:indentLine_char = '.'
 
 " Syntastic settings
 set statusline+=%#warningmsg#
@@ -123,10 +129,17 @@ set showmatch
 set hlsearch
 
 " set relative line number
-set relativenumber
+set number relativenumber
+
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
 
 " Color settings
-colorscheme molokai
+colorscheme monokain
+"let g:molokai_original = 1
 
 " Syntax highlight 
 syntax on
@@ -136,6 +149,7 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set smartindent
 
 " Fuzzy finder
 set path+=**
