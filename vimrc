@@ -84,7 +84,9 @@ set noshowmode
 let delimitMate_expand_cr = 1
 
 " indentLine settings
-let g:indentLine_char = '.'
+let g:indentLine_char = '|'
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '.'
 
 " Syntastic settings
 set statusline+=%#warningmsg#
@@ -118,7 +120,7 @@ set nobackup
 
 " wrap lines 
 set wrap
-set textwidth=79
+set textwidth=80
 set colorcolumn=+1
 
 " searching
@@ -126,7 +128,7 @@ set ignorecase
 set smartcase
 set incsearch
 set showmatch
-set hlsearch
+"set hlsearch
 
 " set relative line number
 set number relativenumber
