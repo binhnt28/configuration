@@ -1,7 +1,7 @@
 " File: .vimrc
 " Author: Nguyen Thai Binh
 " Description: Vim configuration file
-" Last Modified: May 8, 2018
+" Last Modified: May 25, 2018
 "
 "
 "---------- Plugin Settings ----------
@@ -27,7 +27,7 @@ Plugin 'scrooloose/syntastic'
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
 
-" jedi-vim
+" python autocomplete for vim
 "Plugin 'davidhalter/jedi-vim'
 
 " vim-rails
@@ -40,7 +40,7 @@ Plugin 'tpope/vim-fugitive'
 
 " Tagbar 
 " Be aware that this plugin depends on ctags
-Plugin 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 
 " Powerline
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
@@ -60,7 +60,6 @@ Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
 
 " Colorscheme
-"Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()
@@ -71,7 +70,7 @@ call vundle#end()
 let NERDTreeWinSize = 30
 
 " Tagbar settings
-let g:tagbar_width = 30
+"let g:tagbar_width = 30
 
 " Powerline settings
 set laststatus=2
@@ -97,6 +96,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
+let g:syntastic_python_checkers = ['pep8']
 "let g:syntastic_python_python_exec = '/usr/bin/python2'
 
 " UltiSnips settings
@@ -119,9 +119,9 @@ set noswapfile
 set nobackup
 
 " wrap lines 
-set wrap
-set textwidth=80
-set colorcolumn=+1
+"set wrap
+"set textwidth=80
+"set colorcolumn=+1
 
 " searching
 set ignorecase
@@ -140,8 +140,7 @@ augroup numbertoggle
 augroup END
 
 " Color settings
-colorscheme monokain
-"let g:molokai_original = 1
+colorscheme molokai
 
 " Syntax highlight 
 syntax on
