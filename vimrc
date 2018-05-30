@@ -1,7 +1,7 @@
 " File: .vimrc
 " Author: Nguyen Thai Binh
 " Description: Vim configuration file
-" Last Modified: May 25, 2018
+" Last Modified: May 30, 2018
 "
 "
 "---------- Plugin Settings ----------
@@ -219,3 +219,13 @@ map <silent> <F2> :NERDTreeToggle<CR>
 
 " Map Tagbar toggle
 map <silent> <F3> :TagbarToggle<CR>
+
+"-------------------------------
+
+" Python-related mapping
+augroup filetype_py
+    autocmd!
+    autocmd FileType python nnoremap <buffer> <leader>c I#<ESC>
+    autocmd FileType python nnoremap <buffer> <F5> :w<CR> :exec '!clear && python' shellescape(@%, 1)<CR>
+    autocmd FileType python nnoremap <buffer> <F6> :w<CR> :exec '!python' shellescape(@%, 1)<CR>
+augroup END
