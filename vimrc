@@ -218,14 +218,14 @@ nmap <leader>P "+P
 map <silent> <F2> :NERDTreeToggle<CR>
 
 " Map Tagbar toggle
-map <silent> <F3> :TagbarToggle<CR>
+"map <silent> <F3> :TagbarToggle<CR>
 
 "-------------------------------
 
 " Python-related mapping
 augroup filetype_py
     autocmd!
-    autocmd FileType python nnoremap <buffer> <leader>c I#<ESC>
+    autocmd FileType python nnoremap <buffer> <leader>c I# <ESC>
     autocmd FileType python nnoremap <buffer> <F5> :w<CR> :exec '!clear && python' shellescape(@%, 1)<CR>
     autocmd FileType python nnoremap <buffer> <F6> :w<CR> :exec '!python' shellescape(@%, 1)<CR>
 augroup END
