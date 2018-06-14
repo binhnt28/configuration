@@ -1,7 +1,7 @@
 " File: .vimrc
 " Author: Nguyen Thai Binh
 " Description: Vim configuration file
-" Last Modified: May 30, 2018
+" Last Modified: June 12, 2018
 "
 "
 "---------- Plugin Settings ----------
@@ -42,10 +42,6 @@ Plugin 'tpope/vim-fugitive'
 " Be aware that this plugin depends on ctags
 "Plugin 'majutsushi/tagbar'
 
-" Powerline
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-"Plugin 'vim-airline/vim-airline'
-
 " indentLine
 Plugin 'Yggdroot/indentLine'
 
@@ -59,8 +55,10 @@ Plugin 'tpope/vim-surround'
 " delimitMate
 Plugin 'Raimondi/delimitMate'
 
-" Colorscheme
+" Interfaces, themes, colorschemes
 Plugin 'flazz/vim-colorschemes'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Plugin 'vim-airline/vim-airline'
 
 call vundle#end()
 
@@ -97,7 +95,6 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
 let g:syntastic_python_checkers = ['pep8']
-"let g:syntastic_python_python_exec = '/usr/bin/python2'
 
 " UltiSnips settings
 let g:UltiSnipsExpandTrigger="<c-b>"
@@ -106,8 +103,16 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " YouCompleteMe settings
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_semantic_triggers = {
+    \ 'css': [': ', '-', 're!\w{3}'],
+    \ 'html': ['<']
+    \}
 
 "---------- Basic Vim Settings ----------
+
+" Syntax highlight 
+syntax on
+filetype plugin indent on
 
 set encoding=utf-8
 set fileformat=unix
@@ -117,6 +122,7 @@ set wildmenu
 
 set noswapfile
 set nobackup
+set nowrap
 
 " wrap lines 
 "set wrap
@@ -130,6 +136,9 @@ set incsearch
 set showmatch
 "set hlsearch
 
+" highlight current line
+set cursorline
+
 " set relative line number
 set number relativenumber
 
@@ -142,15 +151,19 @@ augroup END
 " Color settings
 colorscheme molokai
 
-" Syntax highlight 
-syntax on
-filetype plugin indent on
-
 " TAB settings
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
+
+autocmd FileType css imap <tab> <C-x><C-o>
+
+augroup rails_tab
+    autocmd!
+    autocmd FileType ruby,html,css set tabstop=2
+    autocmd FileType ruby,html,css set shiftwidth=2
+augroup END
 
 " Fuzzy finder
 set path+=**
@@ -218,7 +231,7 @@ nmap <leader>P "+P
 map <silent> <F2> :NERDTreeToggle<CR>
 
 " Map Tagbar toggle
-"map <silent> <F3> :TagbarToggle<CR>
+map <silent> <F3> :TagbarToggle<CR>
 
 "-------------------------------
 
@@ -226,6 +239,6 @@ map <silent> <F2> :NERDTreeToggle<CR>
 augroup filetype_py
     autocmd!
     autocmd FileType python nnoremap <buffer> <leader>c I# <ESC>
-    autocmd FileType python nnoremap <buffer> <F5> :w<CR> :exec '!clear && python' shellescape(@%, 1)<CR>
-    autocmd FileType python nnoremap <buffer> <F6> :w<CR> :exec '!python' shellescape(@%, 1)<CR>
+    autocmd FileType python nnoremap <buffer> <F5> :w<CR> :exec '!clear && python3' shellescape(@%, 1)<CR>
+    autocmd FileType python nnoremap <buffer> <F6> :w<CR> :exec '!python3' shellescape(@%, 1)<CR>
 augroup END
