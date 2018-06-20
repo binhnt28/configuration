@@ -97,15 +97,14 @@ let g:syntastic_loc_list_height = 5
 let g:syntastic_python_checkers = ['pep8']
 
 " UltiSnips settings
-let g:UltiSnipsExpandTrigger="<c-b>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger="<C-b>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 " YouCompleteMe settings
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_semantic_triggers = {
-    \ 'css': [': ', '-', 're!\w{3}'],
-    \ 'html': ['<']
+    \ 'css': [': ', 're!\w{3}'],
     \}
 
 "---------- Basic Vim Settings ----------
@@ -157,8 +156,6 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
-autocmd FileType css imap <tab> <C-x><C-o>
-
 augroup rails_tab
     autocmd!
     autocmd FileType ruby,html,css set tabstop=2
@@ -177,10 +174,12 @@ let mapleader = ","
 noremap ; :
 
 " Edit ~/.vimrc on-the-fly
-nnoremap <leader>ed :vs $MYVIMRC<CR>
+nnoremap <leader>ed :split $MYVIMRC<CR>
 
 " Clear searching highlight
 nnoremap <silent> <leader><space> :noh<CR>
+
+nnoremap <silent> <leader>gt :YcmCompleter GoTo<CR>
 
 " Remap window navigation
 nnoremap <C-J> <C-W><C-J>
@@ -231,7 +230,7 @@ nmap <leader>P "+P
 map <silent> <F2> :NERDTreeToggle<CR>
 
 " Map Tagbar toggle
-map <silent> <F3> :TagbarToggle<CR>
+"map <silent> <F3> :TagbarToggle<CR>
 
 "-------------------------------
 
@@ -241,4 +240,11 @@ augroup filetype_py
     autocmd FileType python nnoremap <buffer> <leader>c I# <ESC>
     autocmd FileType python nnoremap <buffer> <F5> :w<CR> :exec '!clear && python3' shellescape(@%, 1)<CR>
     autocmd FileType python nnoremap <buffer> <F6> :w<CR> :exec '!python3' shellescape(@%, 1)<CR>
+augroup END
+
+" Ruby-related mapping
+augroup filetype_rb
+    autocmd!
+    autocmd FileType ruby nnoremap <buffer> <F5> :exec '!clear && ruby' shellescape(@%, 1)<CR>
+    autocmd FileType ruby nnoremap <buffer> <F6> :exec '!ruby' shellescape(@%, 1)<CR>
 augroup END
