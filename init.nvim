@@ -1,0 +1,225 @@
+if &compatible
+    set nocompatible
+endif
+
+" Add the dein installation directory into runtimepath
+set rtp+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('~/.cache/dein')
+    call dein#begin('~/.cache/dein')
+
+    call dein#add('~/.cache/dein')
+    call dein#add('Shougo/deoplete.nvim')
+    call dein#add('scrooloose/nerdtree')
+    call dein#add('neomake/neomake')
+    "call dein#add('Valloric/YouCompleteMe')
+    call dein#add('tpope/vim-rails')
+    call dein#add('tpope/vim-bundler')
+    call dein#add('tpope/vim-dispatch')
+    call dein#add('tpope/vim-fugitive')
+    call dein#add('Yggdroot/indentLine')
+    call dein#add('SirVer/ultisnips')
+    call dein#add('honza/vim-snippets')
+    call dein#add('tpope/vim-surround')
+    call dein#add('Raimondi/delimitMate')
+    call dein#add('flazz/vim-colorschemes')
+    call dein#add('vim-airline/vim-airline')
+    "call dein#add('Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'})
+    call dein#add('autozimu/LanguageClient-neovim', {
+        \ 'rev': 'next',
+        \ 'build': 'bash install.sh',
+        \})
+
+    call dein#end()
+    call dein#save_state()
+endif
+
+filetype plugin indent on
+syntax enable
+
+
+"---------- Additional plugin tweaks ----------
+
+" Deoplete settings
+let g:deoplete#enable_at_startup = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" Neomake setings
+"call neomake#configure#automake('nrwi')
+"let g:neomake_open_list = 2
+
+" LanguageClient settings
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_autoStop = 0
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['pyls'],
+    \ 'ruby': ['tcp://localhost:7658']
+    \}
+
+" NERDTree settings
+let NERDTreeWinSize = 30
+
+" Powerline settings
+set laststatus=2
+set noshowmode
+
+" delimitMate settings
+let delimitMate_expand_cr = 1
+
+" indentLine settings
+let g:indentLine_char = '|'
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '.'
+
+" UltiSnips settings
+let g:UltiSnipsExpandTrigger="<C-b>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+
+"---------- Basic Vim Settings ----------
+
+set encoding=utf-8
+set fileformat=unix
+
+set showcmd
+set wildmenu
+
+set noswapfile
+set nobackup
+set nowrap
+
+" wrap lines 
+"set wrap
+"set textwidth=80
+"set colorcolumn=+1
+
+" searching
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+"set hlsearch
+
+" highlight current line
+set cursorline
+
+" set relative line number
+set number relativenumber
+
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+" Color settings
+colorscheme molokai
+
+" TAB settings
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+
+augroup rails_tab
+    autocmd!
+    autocmd FileType ruby,html,css set tabstop=2
+    autocmd FileType ruby,html,css set shiftwidth=2
+augroup END
+
+" Fuzzy finder
+set path+=**
+
+"---------- Mapping Key ----------
+
+" Change <leader> key
+let mapleader = ","
+
+" Let ; be also :
+noremap ; :
+
+" Edit ~/.vimrc on-the-fly
+nnoremap <leader>ed :split $MYVIMRC<CR>
+
+" Clear searching highlight
+nnoremap <silent> <leader><space> :noh<CR>
+
+"nnoremap <silent> <leader>gt :YcmCompleter GoTo<CR>
+nnoremap <F9> :call LanguageClient_contextMenu()<CR>
+
+" deoplete Tab
+inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <silent><expr> <Tab>
+"  \ pumvisible() ? "\<C-n>" :
+"  \ deoplete#mappings#manual_complete()
+
+" Remap window navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
+
+"---------- Surround Shortcuts ----------
+
+" Surround a word(s) with double-quotes
+nmap <leader>" ysiw"
+vmap <leader>" S"
+
+" Surround a word(s) with single-quotes
+nmap <leader>' ysiw'
+vmap <leader>' S'
+
+" Surround a word(s) with parentheses
+nmap <leader>( ysiw(
+nmap <leader>) ysiw)
+vmap <leader>( S(
+vmap <leader>) S)
+
+" Surround a word(s) with brackets
+nmap <leader>[ ysiw[
+nmap <leader>] ysiw]
+vmap <leader>[ S[
+vmap <leader>] S]
+
+" Surround a word(s) with braces
+nmap <leader>{ ysiw{
+nmap <leader>} ysiw}
+vmap <leader>{ S{
+vmap <leader>} S}
+
+"-------------------------------
+
+" Map copy and paste to clipboard
+vmap <leader>y "+y
+vmap <leader>d "+d
+
+nmap <leader>p "+p
+nmap <leader>P "+P
+
+"-------------------------------
+
+" Map NERDTree toggle
+map <silent> <F2> :NERDTreeToggle<CR>
+
+" Map Tagbar toggle
+"map <silent> <F3> :TagbarToggle<CR>
+
+"-------------------------------
+
+" Python-related mapping
+augroup filetype_py
+    autocmd!
+    autocmd FileType python nnoremap <buffer> <leader>c I# <ESC>
+    autocmd FileType python nnoremap <buffer> <F5> :w<CR> :exec '!clear && python3' shellescape(@%, 1)<CR>
+    autocmd FileType python nnoremap <buffer> <F6> :w<CR> :exec '!python3' shellescape(@%, 1)<CR>
+augroup END
+
+" Ruby-related mapping
+augroup filetype_rb
+    autocmd!
+    autocmd FileType ruby nnoremap <buffer> <F5> :exec '!clear && ruby' shellescape(@%, 1)<CR>
+    autocmd FileType ruby nnoremap <buffer> <F6> :exec '!ruby' shellescape(@%, 1)<CR>
+augroup END
+
