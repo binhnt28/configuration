@@ -26,6 +26,9 @@ set showmatch
 " highlight current line
 set cursorline
 
+" live substitution
+set inccommand=nosplit
+
 " set relative line number
 set number relativenumber
 
@@ -47,11 +50,7 @@ set shiftwidth=4
 set expandtab
 set smartindent
 
-augroup rails_tab
-    autocmd!
-    autocmd FileType ruby,html,css set tabstop=2
-    autocmd FileType ruby,html,css set shiftwidth=2
-augroup END
+autocmd FileType ruby,eruby,html,htmldjango,css set tabstop=2 shiftwidth=2
 
 " Fuzzy finder
 set path+=**
