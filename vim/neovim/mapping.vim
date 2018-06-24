@@ -87,7 +87,7 @@ nnoremap <leader>rf :TREPLSendFile<CR>
 vnoremap <leader>rs :TREPLSendSelection<CR>
 
 " denite mapping
-nnoremap <C-p> :<C-u>Denite file_rec<CR>
+nnoremap <C-p> :<C-u>Denite file/rec<CR>
 nnoremap <leader>. :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 nnoremap <leader>b :<C-u>Denite buffer<CR>
 nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>

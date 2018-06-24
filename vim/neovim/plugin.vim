@@ -1,7 +1,7 @@
 " Deoplete settings
 set completeopt=menu,preview,longest
 let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = '/home/ntbinh/.local/share/nvim/deoplete-python-env/bin/python'
+let g:python3_host_prog = '/home/ntbinh/.local/share/nvim/plugged/python-env/bin/python'
 call deoplete#custom#option({
     \ 'max_list': 30,
     \ 'smart_case': v:true
@@ -42,14 +42,29 @@ let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline_powerline_fonts = 1 
 
-" denite settings
+" denite.nvim settings
 call denite#custom#option('default', {
+    \ 'auto_accel': v:true,
+    \ 'highlight_mode_normal': 'CursorLine',
     \ 'prompt': '> ',
     \ 'winheight': 15,
     \ 'source_names': 'short',
     \ 'vertical_preview': v:true
     \})
 
+" denite.nvim MATCHER
+call denite#custom#source('tag', 'matchers', ['matcher_substring'])
+if has('nvim') && &runtimepath =~# '\/cpsm'
+	call denite#custom#source(
+		\ 'buffer,file_mru,file_old,file_rec,grep,mpc,line',
+		\ 'matchers', ['matcher_cpsm', 'matcher_fuzzy'])
+endif
+
+" denite.nvim SORTER
+" Default is 'sorter_rank'
+call denite#custom#source('z', 'sorters', ['sorter_z'])
+
+" denite.nvim COMMAND
 call denite#custom#var('file_rec', 'command',
     \ ['rg', '--files', '--glob', '!.git', ''])
 call denite#custom#var('grep', 'command', ['rg'])
@@ -60,7 +75,9 @@ call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
 call denite#custom#var('grep', 'separator', ['--'])
 call denite#custom#var('grep', 'final_opts', [])
 
+" denite.nvim MAPPINGS
 call denite#custom#map('insert', '<Esc>', '<denite:enter_mode:normal>', 'noremap')
+call denite#custom#map('insert', '<C-q>', '<denite:quit>', 'noremap')
 call denite#custom#map('insert', '<C-n>', '<denite:assign_next_matched_text>', 'noremap')
 call denite#custom#map('insert', '<C-p>', '<denite:assign_previous_matched_text>', 'noremap')
 call denite#custom#map('insert', '<C-s>', '<denite:do_action:split>', 'noremap')

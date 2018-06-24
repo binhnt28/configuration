@@ -4,6 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " General programming support and autocompletion
 Plug 'Shougo/deoplete.nvim'
+" Plug 'zchee/deoplete-jedi'
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
 Plug 'SirVer/ultisnips'
@@ -15,7 +16,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'autozimu/LanguageClient-neovim', {
             \ 'branch': 'next',
             \ 'do': 'bash install.sh',
-            \ 'for': 'python'
             \}
 
 " Git
