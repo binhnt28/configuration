@@ -1,5 +1,5 @@
 " Change <leader> key
-let mapleader = ","
+let g:mapleader = "\<Space>"
 
 " Let ; be also :
 noremap ; :
@@ -8,11 +8,8 @@ noremap ; :
 nnoremap <leader>ed :split $MYVIMRC<CR>
 
 " Clear searching highlight
-nnoremap <silent> <leader><space> :noh<CR>
+nnoremap <silent> <leader><backspace> :noh<CR>
 
-" deoplete Tab
-inoremap <silent> <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-"
 " Remap window navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -21,10 +18,10 @@ nnoremap <C-L> <C-W><C-L>
 
 " Disable arrow
 if get(g:, 'elite_mode')
-    noremap <Up>    :resize +2<CR>
-    noremap <Down>  :resize -2<CR>
-    noremap <Left>  :vertical resize +2<CR>
-    noremap <Right> :vertical resize -2<CR>
+    nnoremap <Up>    <C-W>+
+    nnoremap <Down>  <C-W>-
+    nnoremap <Left>  <C-W><
+    nnoremap <Right> <C-W>>
 endif
 
 "---------- Surround Shortcuts ----------
@@ -65,12 +62,16 @@ nmap <leader>p "+p
 nmap <leader>P "+P
 
 "-------------------------------
-
+" ---- SPECIFIC PLUGIN MAPPING ----
+"
 " Map NERDTree toggle
 map <silent> <F2> :NERDTreeToggle<CR>
 
 " Map Tagbar toggle
 map <silent> <F3> :TagbarToggle<CR>
+
+" deoplete Tab
+inoremap <silent> <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 
 " LanguageClient toggle
 nnoremap <silent> <F9> :call LanguageClient_contextMenu()<CR>
@@ -84,3 +85,9 @@ tnoremap <ESC> <C-\><C-n>
 nnoremap <leader>rl :TREPLSendLine<CR>
 nnoremap <leader>rf :TREPLSendFile<CR>
 vnoremap <leader>rs :TREPLSendSelection<CR>
+
+" denite mapping
+nnoremap <C-p> :<C-u>Denite file_rec<CR>
+nnoremap <leader>. :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+nnoremap <leader>b :<C-u>Denite buffer<CR>
+nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>

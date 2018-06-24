@@ -42,7 +42,11 @@ augroup END
 set splitright
 
 " Color settings
-colorscheme molokai
+if has ('nvim') || has('termguicolors')
+    set termguicolors
+endif
+colorscheme onehalfdark
+let g:airline_theme='deus'
 
 " TAB settings
 set tabstop=4
