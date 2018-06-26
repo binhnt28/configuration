@@ -6,6 +6,7 @@ noremap ; :
 
 " Edit ~/.vimrc on-the-fly
 nnoremap <leader>ed :split $MYVIMRC<CR>
+nnoremap <leader>de :edit $MYVIMRC<CR>
 
 " Clear searching highlight
 nnoremap <silent> <leader><backspace> :noh<CR>
@@ -87,7 +88,7 @@ nnoremap <leader>rf :TREPLSendFile<CR>
 vnoremap <leader>rs :TREPLSendSelection<CR>
 
 " denite mapping
-nnoremap <C-p> :<C-u>Denite file/rec<CR>
-nnoremap <leader>. :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-nnoremap <leader>b :<C-u>Denite buffer<CR>
-nnoremap <leader>/ :<C-u>Denite grep:. -mode=normal<CR>
+nnoremap <C-p> :Denite file/rec -mode=insert<CR>
+nnoremap <leader>b :Denite buffer -mode=normal<CR>
+nnoremap <leader>. :DeniteCursorWord grep:. -mode=normal<CR>
+nnoremap <leader>/ :Denite grep:. -mode=normal<CR>

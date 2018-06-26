@@ -6,7 +6,6 @@ set wildmenu
 
 set noswapfile
 set nobackup
-set nowrap
 
 " Don't use arrow
 let g:elite_mode = 1

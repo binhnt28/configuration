@@ -1,7 +1,7 @@
 " Deoplete settings
 set completeopt=menu,preview,longest
 let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = '/home/ntbinh/.local/share/nvim/plugged/python-env/bin/python'
+let g:python3_host_prog = '/home/ntbinh/.local/share/nvim/python-env/bin/python'
 call deoplete#custom#option({
     \ 'max_list': 30,
     \ 'smart_case': v:true
@@ -24,7 +24,7 @@ let g:LanguageClient_serverCommands = {
 
 " Neoterm settings
 let g:neoterm_autoscroll = '1'
-" let g:neoterm_size = 12
+let g:neoterm_size = 15
 let g:neoterm_automap_keys = '<F5>'
 
 " Emmet-vim settings
@@ -40,14 +40,19 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#neomake#enabled = 1
 let g:airline_powerline_fonts = 1 
 
 " denite.nvim settings
 call denite#custom#option('default', {
     \ 'auto_accel': v:true,
+    \ 'auto_resize': v:true,
     \ 'highlight_mode_normal': 'CursorLine',
+    \ 'highlight_matched_char': 'Operator',
+    \ 'highlight_matched_range': 'None',
     \ 'prompt': '> ',
     \ 'winheight': 15,
+    \ 'winwidth': 40,
     \ 'source_names': 'short',
     \ 'vertical_preview': v:true
     \})
@@ -65,8 +70,8 @@ endif
 call denite#custom#source('z', 'sorters', ['sorter_z'])
 
 " denite.nvim COMMAND
-call denite#custom#var('file_rec', 'command',
-    \ ['rg', '--files', '--glob', '!.git', ''])
+call denite#custom#var('file/rec', 'command',
+    \ ['rg', '--files', '--glob', '!.git'])
 call denite#custom#var('grep', 'command', ['rg'])
 call denite#custom#var('grep', 'default_opts',
     \ ['--hidden', '--vimgrep', '--no-heading', '-S'])
