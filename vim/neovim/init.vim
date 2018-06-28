@@ -4,6 +4,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " General programming support and autocompletion
 Plug 'Shougo/deoplete.nvim'
+Plug 'osyo-manga/vim-monster'
+Plug 'zchee/deoplete-jedi'
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
 Plug 'SirVer/ultisnips'
@@ -12,10 +14,10 @@ Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby'] }
 Plug 'tomtom/tcomment_vim'
-Plug 'autozimu/LanguageClient-neovim', {
-            \ 'branch': 'next',
-            \ 'do': 'bash install.sh',
-            \}
+" Plug 'autozimu/LanguageClient-neovim', {
+"             \ 'branch': 'next',
+"             \ 'do': 'bash install.sh',
+"             \}
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -29,6 +31,7 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-dispatch'
 Plug 'Yggdroot/indentLine'
 Plug 'machakann/vim-highlightedyank'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " Interface
 Plug 'vim-airline/vim-airline'

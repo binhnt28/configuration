@@ -73,6 +73,7 @@ map <silent> <F3> :TagbarToggle<CR>
 
 " deoplete Tab
 inoremap <silent> <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr><C-z> deoplete#undo_completion()
 
 " LanguageClient toggle
 nnoremap <silent> <F9> :call LanguageClient_contextMenu()<CR>
