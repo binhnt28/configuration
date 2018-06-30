@@ -75,9 +75,6 @@ map <silent> <F3> :TagbarToggle<CR>
 inoremap <silent> <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr><C-z> deoplete#undo_completion()
 
-" LanguageClient toggle
-nnoremap <silent> <F9> :call LanguageClient_contextMenu()<CR>
-
 " Neoterm mapping
 nnoremap <leader>` :Tmap 
 nnoremap <silent> <leader>c :Tclear<CR>
@@ -89,7 +86,7 @@ nnoremap <leader>rf :TREPLSendFile<CR>
 vnoremap <leader>rs :TREPLSendSelection<CR>
 
 " denite mapping
-nnoremap <C-p> :Denite file/rec -mode=insert<CR>
-nnoremap <leader>b :Denite buffer -mode=normal<CR>
-nnoremap <leader>. :DeniteCursorWord grep:. -mode=normal<CR>
-nnoremap <leader>/ :Denite grep:. -mode=normal<CR>
+nnoremap <silent> <C-p> :Denite file/rec -mode=insert<CR>
+nnoremap <silent> <leader>b :Denite buffer -mode=insert<CR>
+nnoremap <silent> <leader>/ :Denite grep:. -mode=normal<CR>
+nnoremap <silent> <leader>. :DeniteCursorWord grep:. -mode=normal<CR>
