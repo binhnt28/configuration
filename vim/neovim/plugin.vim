@@ -1,10 +1,9 @@
 " deoplete settings
 set completeopt=menu,preview,longest
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_refresh_always = 0
-let g:deoplete#enable_camel_case = 1
 let g:python3_host_prog = '/home/ntbinh/.local/share/nvim/python-env/bin/python'
 call deoplete#custom#option({
+    \ 'camel_case': v:true,
     \ 'max_list': 30,
     \ 'smart_case': v:true
     \})
@@ -13,6 +12,7 @@ call deoplete#custom#source('_',
 call deoplete#custom#source('omni', 'mark', '⌾')
 call deoplete#custom#source('jedi', 'mark', '⌁')
 call deoplete#custom#source('ultisnips', 'mark', '⌘ ')
+call deoplete#custom#source('buffer', 'mark', '*')
 call deoplete#custom#source('syntax', 'mark', '♯')
 call deoplete#custom#source('member', 'mark', '.')
 autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
@@ -25,7 +25,6 @@ let g:deoplete#sources#jedi#short_types = 1
 
 " neomake setings
 call neomake#configure#automake('irw')
-let g:neomake_python_enabled_makers = []
 " let g:neomake_open_list = 2
 " let g:neomake_list_height = 5
 
@@ -58,7 +57,7 @@ call denite#custom#option('default', {
     \ 'highlight_mode_insert': 'StatusLine',
     \ 'highlight_matched_char': 'MatchParen',
     \ 'highlight_matched_range': 'Operator',
-    \ 'highlight_preview_line': 'Visual',
+    \ 'highlight_preview_line': 'Search',
     \ 'prompt': '> ',
     \ 'source_names': 'short',
     \ 'winheight': 15,

@@ -32,22 +32,27 @@ set incsearch
 set showmatch
 "set hlsearch
 
-" highlight current line
-set cursorline
-
 " live substitution
 set inccommand=nosplit
 
-" set relative line number
-set number relativenumber
 set list
 set ruler
 set colorcolumn=81
+
+" set relative line number
+set number relativenumber
 
 augroup numbertoggle
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
     autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+
+" set cursorline
+augroup cursorline
+    autocmd!
+    autocmd BufEnter,WinEnter * set cursorline
+    autocmd BufLeave,WinLeave * set nocursorline
 augroup END
 
 " Split to the right
