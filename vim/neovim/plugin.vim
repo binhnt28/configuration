@@ -25,6 +25,7 @@ let g:deoplete#sources#jedi#short_types = 1
 
 " neomake setings
 call neomake#configure#automake('irw')
+let g:neomake_python_enabled_makers = [ 'flake8', 'pep8' ]
 " let g:neomake_open_list = 2
 " let g:neomake_list_height = 5
 
@@ -48,6 +49,32 @@ let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#neomake#enabled = 1
 let g:airline_powerline_fonts = 1 
+
+" vim-gitgutter settings
+set updatetime=200
+let g:gitgutter_enabled = 1
+let g:gitgutter_signs = 1
+let g:gitgutter_highlight_lines = 0
+let g:gitgutter_grep = 'rg'
+
+" NERDTree settings
+let NERDTreeWinSize = 30
+
+" Tagbar settings
+let g:tagbar_width = 30
+
+" delimitMate settings
+let delimitMate_expand_cr = 1
+
+" indentLine settings
+let g:indentLine_char = '.'
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '.'
+
+" UltiSnips settings
+let g:UltiSnipsExpandTrigger="<C-b>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
 " denite.nvim settings
 call denite#custom#option('default', {
@@ -105,22 +132,3 @@ call denite#custom#map('normal', '<C-p>', '<denite:jump_to_previous_source>', 'n
 call denite#custom#map('normal', 'ss', '<denite:do_action:split>', 'noremap')
 call denite#custom#map('normal', 'vs', '<denite:do_action:vsplit>', 'noremap')
 call denite#custom#map('normal', 'ts', '<denite:do_action:tabopen>', 'noremap')
-
-" NERDTree settings
-let NERDTreeWinSize = 30
-
-" Tagbar settings
-let g:tagbar_width = 30
-
-" delimitMate settings
-let delimitMate_expand_cr = 1
-
-" indentLine settings
-let g:indentLine_char = '.'
-let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_leadingSpaceChar = '.'
-
-" UltiSnips settings
-let g:UltiSnipsExpandTrigger="<C-b>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"

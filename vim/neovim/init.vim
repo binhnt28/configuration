@@ -16,6 +16,7 @@ Plug 'tomtom/tcomment_vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Useful tools
 Plug 'Shougo/denite.nvim'

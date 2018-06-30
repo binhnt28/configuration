@@ -64,14 +64,18 @@ nmap <leader>P "+P
 
 "-------------------------------
 " ---- SPECIFIC PLUGIN MAPPING ----
-"
-" Map NERDTree toggle
+"-------------------------------
+
+" NERDTree toggle
 map <silent> <F2> :NERDTreeToggle<CR>
 
-" Map Tagbar toggle
+" Tagbar toggle
 map <silent> <F3> :TagbarToggle<CR>
 
-" deoplete Tab
+" vim-gitgutter toggle
+map <silent> <F5> :GitGutterLineHighlightsToggle<CR>
+
+" deoplete
 inoremap <silent> <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr><C-z> deoplete#undo_completion()
 
