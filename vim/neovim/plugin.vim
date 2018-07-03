@@ -24,7 +24,7 @@ let g:deoplete#sources#jedi#show_docstring = 1
 let g:deoplete#sources#jedi#short_types = 1
 
 " neomake setings
-call neomake#configure#automake('irw')
+call neomake#configure#automake('a')
 let g:neomake_python_enabled_makers = [ 'flake8', 'pep8' ]
 " let g:neomake_open_list = 2
 " let g:neomake_list_height = 5

@@ -13,10 +13,12 @@ Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby'] }
 Plug 'tomtom/tcomment_vim'
+Plug 'ap/vim-css-color', { 'for': ['css'] }
 
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'lambdalisue/gina.vim'
 
 " Useful tools
 Plug 'Shougo/denite.nvim'
@@ -27,6 +29,7 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-dispatch'
 Plug 'Yggdroot/indentLine'
 Plug 'machakann/vim-highlightedyank'
+Plug 'muansari96/vimify'
 
 " Interface
 Plug 'vim-airline/vim-airline'
