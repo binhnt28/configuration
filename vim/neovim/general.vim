@@ -21,8 +21,6 @@ let g:elite_mode = 1
 "set textwidth=80
 "set colorcolumn=+1
 
-set errorbells
-set magic
 set shada='300,<50,@100,s10,h
 
 " searching

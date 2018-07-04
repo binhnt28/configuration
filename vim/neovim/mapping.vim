@@ -75,6 +75,10 @@ map <silent> <F3> :TagbarToggle<CR>
 " vim-gitgutter toggle
 map <silent> <F5> :GitGutterLineHighlightsToggle<CR>
 
+" fugitive mapping
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gb :Gblame<CR>
+
 " deoplete
 inoremap <silent> <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr><C-z> deoplete#undo_completion()

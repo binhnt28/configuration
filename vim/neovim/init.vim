@@ -7,13 +7,17 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-jedi'
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby'] }
+Plug 'ap/vim-css-color', { 'for': ['css'] }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate'
-Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby'] }
 Plug 'tomtom/tcomment_vim'
-Plug 'ap/vim-css-color', { 'for': ['css'] }
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-endwise'
+
+" Text object
+Plug 'michaeljsmith/vim-indent-object'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -29,7 +33,6 @@ Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-dispatch'
 Plug 'Yggdroot/indentLine'
 Plug 'machakann/vim-highlightedyank'
-Plug 'muansari96/vimify'
 
 " Interface
 Plug 'vim-airline/vim-airline'
