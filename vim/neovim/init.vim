@@ -8,7 +8,8 @@ Plug 'zchee/deoplete-jedi'
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby'] }
-Plug 'ap/vim-css-color', { 'for': ['css'] }
+Plug 'ap/vim-css-color'
+Plug 'shmargum/vim-sass-colors'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
@@ -18,6 +19,9 @@ Plug 'tpope/vim-endwise'
 
 " Text object
 Plug 'michaeljsmith/vim-indent-object'
+Plug 'kana/vim-textobj-user'
+Plug 'lucapette/vim-textobj-underscore'
+Plug 'whatyouhide/vim-textobj-erb'
 
 " Git
 Plug 'tpope/vim-fugitive'
