@@ -1,17 +1,39 @@
 " deoplete settings
+let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog = $HOME.'/.local/share/nvim/python-env/bin/python'
+
+set completeopt+=longest
+
 call deoplete#custom#option({
-    \ 'camel_case': v:true,
     \ 'max_list': 30,
+    \ 'camel_case': v:true,
     \ 'smart_case': v:true
     \})
 
 call deoplete#custom#source('_',
     \ 'disabled_syntaxes', ['Comment', 'String'])
 
-set completeopt=menu,menuone,preview,longest
+call deoplete#custom#source('omni', 'functions', {
+    \ 'html': 'htmlcomplete#CompleteTags',
+    \ 'xml': 'htmlcomplete#CompleteTags',
+    \ 'md': 'htmlcomplete#CompleteTags',
+    \ 'css': 'csscomplete#CompleteCSS',
+    \ 'scss': 'csscomplete#CompleteCSS',
+    \ 'sass': 'csscomplete#CompleteCSS', 
+    \ 'javascript': 'javascriptcomplete#CompleteJS',
+    \ 'ruby': 'rubycomplete#Complete'
+    \})
 
-let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = $HOME.'/.local/share/nvim/python-env/bin/python'
+call deoplete#custom#var('omni', 'input_patterns', {
+    \ 'html': '<[^>]*',
+    \ 'xml': '<[^>]*',
+    \ 'md': '<[^>]*',
+    \ 'css': '\w{2,}[):]?\s*\w*',
+    \ 'scss': '\w{2,}[):]?\s*\w*',
+    \ 'sass': '\w{2,}[):]?\s*\w*',
+    \ 'javascript': '[^. *\t]\.\w*',
+    \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::']
+    \})
 
 call deoplete#custom#source('omni', 'mark', '⌾')
 call deoplete#custom#source('jedi', 'mark', '⌁')
@@ -36,7 +58,7 @@ let g:neomake_python_enabled_makers = [ 'flake8', 'pep8' ]
 
 " neoterm settings
 let g:neoterm_autoscroll = '1'
-let g:neoterm_size = 15
+let g:neoterm_size = 10
 let g:neoterm_automap_keys = '<F5>'
 
 " emmet-vim settings
@@ -63,9 +85,6 @@ let g:gitgutter_signs = 1
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_grep = 'rg'
 
-" devicon settings
-let g:webdevicons_enable_nerdtree = 1
-
 " NERDTree settings
 let NERDTreeWinSize = 30
 
@@ -79,6 +98,8 @@ let delimitMate_expand_cr = 1
 let g:indentLine_char = '.'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_leadingSpaceChar = '.'
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
 
 " UltiSnips settings
 let g:UltiSnipsExpandTrigger="<C-b>"

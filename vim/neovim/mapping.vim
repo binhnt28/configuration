@@ -76,8 +76,10 @@ map <silent> <F3> :TagbarToggle<CR>
 map <silent> <F5> :GitGutterLineHighlightsToggle<CR>
 
 " deoplete
-inoremap <silent> <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr><C-z> deoplete#undo_completion()
+imap <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+imap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+imap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+imap <expr><C-z> deoplete#undo_completion()
 
 " Neoterm mapping
 nnoremap <leader>` :Tmap 
@@ -90,7 +92,7 @@ nnoremap <leader>rf :TREPLSendFile<CR>
 vnoremap <leader>rs :TREPLSendSelection<CR>
 
 " denite mapping
-nnoremap <silent> <C-p> :Denite file_rec<CR>
-nnoremap <silent> <leader>b :Denite buffer<CR>
-nnoremap <silent> <leader>/ :Denite grep:. -mode=normal<CR>
-nnoremap <silent> <leader>. :DeniteCursorWord grep:. -mode=normal<CR>
+nnoremap <silent> <C-p> <C-o>:Denite file_rec<CR>
+nnoremap <silent> <leader>b <C-o>:Denite buffer<CR>
+nnoremap <silent> <leader>/ <C-o>:Denite grep:. -mode=normal<CR>
+nnoremap <silent> <leader>. <C-o>:DeniteCursorWord grep:. -mode=normal<CR>

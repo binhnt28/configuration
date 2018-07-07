@@ -8,7 +8,7 @@ Plug 'zchee/deoplete-jedi'
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
-Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color', { 'for': ['css'] }
 Plug 'shmargum/vim-sass-colors'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
@@ -31,10 +31,10 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " Useful tools
 Plug 'Shougo/denite.nvim'
 Plug 'kassio/neoterm'
-Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
-Plug 'Yggdroot/indentLine'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'machakann/vim-highlightedyank'
+Plug 'nathanaelkane/vim-indent-guides'
 
 " Interface
 Plug 'vim-airline/vim-airline'
