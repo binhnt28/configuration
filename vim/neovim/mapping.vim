@@ -75,10 +75,6 @@ map <silent> <F3> :TagbarToggle<CR>
 " vim-gitgutter toggle
 map <silent> <F5> :GitGutterLineHighlightsToggle<CR>
 
-" fugitive mapping
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gb :Gblame<CR>
-
 " deoplete
 inoremap <silent> <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr><C-z> deoplete#undo_completion()
@@ -94,7 +90,7 @@ nnoremap <leader>rf :TREPLSendFile<CR>
 vnoremap <leader>rs :TREPLSendSelection<CR>
 
 " denite mapping
-nnoremap <silent> <C-p> :Denite file/rec -mode=insert<CR>
-nnoremap <silent> <leader>b :Denite buffer -mode=insert<CR>
+nnoremap <silent> <C-p> :Denite file_rec<CR>
+nnoremap <silent> <leader>b :Denite buffer<CR>
 nnoremap <silent> <leader>/ :Denite grep:. -mode=normal<CR>
 nnoremap <silent> <leader>. :DeniteCursorWord grep:. -mode=normal<CR>

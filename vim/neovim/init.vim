@@ -7,7 +7,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'zchee/deoplete-jedi'
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
-Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
 Plug 'ap/vim-css-color'
 Plug 'shmargum/vim-sass-colors'
 Plug 'SirVer/ultisnips'
@@ -26,15 +26,13 @@ Plug 'whatyouhide/vim-textobj-erb'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'lambdalisue/gina.vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Useful tools
 Plug 'Shougo/denite.nvim'
 Plug 'kassio/neoterm'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'}
-Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-dispatch'
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
 Plug 'Yggdroot/indentLine'
 Plug 'machakann/vim-highlightedyank'
 
@@ -43,6 +41,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tomasr/molokai'
+Plug 'altercation/vim-colors-solarized'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 call plug#end()

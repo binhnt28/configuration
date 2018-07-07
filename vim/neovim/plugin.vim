@@ -1,20 +1,25 @@
 " deoplete settings
-set completeopt+=longest
-let g:deoplete#enable_at_startup = 1
-let g:python3_host_prog = '/home/ntbinh/.local/share/nvim/python-env/bin/python'
 call deoplete#custom#option({
     \ 'camel_case': v:true,
     \ 'max_list': 30,
     \ 'smart_case': v:true
     \})
+
 call deoplete#custom#source('_',
     \ 'disabled_syntaxes', ['Comment', 'String'])
+
+set completeopt=menu,menuone,preview,longest
+
+let g:deoplete#enable_at_startup = 1
+let g:python3_host_prog = $HOME.'/.local/share/nvim/python-env/bin/python'
+
 call deoplete#custom#source('omni', 'mark', '⌾')
 call deoplete#custom#source('jedi', 'mark', '⌁')
 call deoplete#custom#source('ultisnips', 'mark', '⌘ ')
 call deoplete#custom#source('buffer', 'mark', '*')
 call deoplete#custom#source('syntax', 'mark', '♯')
 call deoplete#custom#source('member', 'mark', '.')
+
 autocmd InsertLeave * if pumvisible() == 0 | pclose | endif
 
 " deoplete-jedi settings
@@ -48,6 +53,7 @@ let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#show_close_button = 0
 let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#neomake#enabled = 1
+let g:airline_exclude_preview = 1
 let g:airline_powerline_fonts = 1 
 
 " vim-gitgutter settings
@@ -56,6 +62,9 @@ let g:gitgutter_enabled = 1
 let g:gitgutter_signs = 1
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_grep = 'rg'
+
+" devicon settings
+let g:webdevicons_enable_nerdtree = 1
 
 " NERDTree settings
 let NERDTreeWinSize = 30
@@ -89,7 +98,7 @@ call denite#custom#option('default', {
             \ 'auto_resume': v:true,
             \ 'highlight_mode_normal': 'Cursor',
             \ 'highlight_mode_insert': 'StatusLine',
-            \ 'highlight_matched_char': 'MatchParen',
+            \ 'highlight_matched_char': 'DiffChange',
             \ 'highlight_matched_range': 'Operator',
             \ 'highlight_preview_line': 'Search',
             \ 'prompt': '> ',
@@ -112,7 +121,7 @@ endif
 call denite#custom#source('z', 'sorters', ['sorter_z'])
 
 " denite.nvim COMMAND
-call denite#custom#var('file/rec', 'command',
+call denite#custom#var('file_rec', 'command',
             \ ['rg', '--files', '--glob', '!.git'])
 call denite#custom#var('grep', 'command', ['rg'])
 call denite#custom#var('grep', 'default_opts',

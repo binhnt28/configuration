@@ -33,17 +33,14 @@ set showmatch
 " live substitution
 set inccommand=nosplit
 
-set list
 set ruler
 set colorcolumn=81
 
-" set relative line number
-set number relativenumber
-
+" set linenumber
 augroup numbertoggle
     autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    autocmd BufEnter,FocusGained * set number relativenumber
+    autocmd BufLeave,FocusLost * set nonumber norelativenumber
 augroup END
 
 " set cursorline
@@ -75,3 +72,17 @@ autocmd FileType ruby,eruby,html,htmldjango,css set tabstop=2 shiftwidth=2
 
 " Fuzzy finder
 set path+=**
+
+hi ActiveWindow guibg=bg
+hi InactiveWindow guibg=#0F131B
+
+" Call method on window enter
+augroup WindowManagement
+  autocmd!
+  autocmd WinEnter,WinLeave * call Handle_Win_Enter()
+augroup END
+
+" Change highlight group of active/inactive windows
+function! Handle_Win_Enter()
+  setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+endfunction
