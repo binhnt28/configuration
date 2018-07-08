@@ -20,7 +20,6 @@ Plug 'tpope/vim-endwise'
 " Text object
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'kana/vim-textobj-user'
-Plug 'lucapette/vim-textobj-underscore'
 Plug 'whatyouhide/vim-textobj-erb'
 
 " Git
@@ -34,7 +33,7 @@ Plug 'kassio/neoterm'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'machakann/vim-highlightedyank'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine'
 
 " Interface
 Plug 'vim-airline/vim-airline'
@@ -45,6 +44,9 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 call plug#end()
+
+" Add custom snippets for UltiSnips
+set runtimepath+=$HOME/.local/share/nvim/plugged/my-snippets
 
 source $HOME/.config/nvim/plugin.vim
 source $HOME/.config/nvim/general.vim

@@ -7,6 +7,7 @@ noremap ; :
 " Edit ~/.vimrc on-the-fly
 nnoremap <leader>ed :split $MYVIMRC<CR>
 nnoremap <leader>de :edit $MYVIMRC<CR>
+nnoremap <leader>ut :edit $HOME/.config/nvim/UltiSnips<CR>
 
 " Clear searching highlight
 nnoremap <silent> <leader><backspace> :noh<CR>
@@ -92,7 +93,7 @@ nnoremap <leader>rf :TREPLSendFile<CR>
 vnoremap <leader>rs :TREPLSendSelection<CR>
 
 " denite mapping
-nnoremap <silent> <C-p> <C-o>:Denite file_rec<CR>
-nnoremap <silent> <leader>b <C-o>:Denite buffer<CR>
-nnoremap <silent> <leader>/ <C-o>:Denite grep:. -mode=normal<CR>
-nnoremap <silent> <leader>. <C-o>:DeniteCursorWord grep:. -mode=normal<CR>
+map <silent> <C-p> <C-o>:Denite file_rec<CR>
+map <silent> <leader>b <C-o>:Denite buffer<CR>
+map <silent> <leader>/ <C-o>:Denite grep:. -mode=normal<CR>
+map <silent> <leader>. <C-o>:DeniteCursorWord grep:. -mode=normal<CR>

@@ -28,9 +28,9 @@ call deoplete#custom#var('omni', 'input_patterns', {
     \ 'html': '<[^>]*',
     \ 'xml': '<[^>]*',
     \ 'md': '<[^>]*',
-    \ 'css': '\w{2,}[):]?\s*\w*',
-    \ 'scss': '\w{2,}[):]?\s*\w*',
-    \ 'sass': '\w{2,}[):]?\s*\w*',
+    \ 'css': '\w{2,}[):-]?\s*\w*',
+    \ 'scss': '\w{2,}[):-]?\s*\w*',
+    \ 'sass': '\w{2,}[):-]?\s*\w*',
     \ 'javascript': '[^. *\t]\.\w*',
     \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::']
     \})
@@ -49,69 +49,6 @@ let g:deoplete#sources#jedi#server_timeout = 30
 let g:deoplete#sources#jedi#statement_length = 30
 let g:deoplete#sources#jedi#show_docstring = 1
 let g:deoplete#sources#jedi#short_types = 1
-
-" neomake setings
-call neomake#configure#automake('nirw')
-let g:neomake_python_enabled_makers = [ 'flake8', 'pep8' ]
-" let g:neomake_open_list = 2
-" let g:neomake_list_height = 5
-
-" neoterm settings
-let g:neoterm_autoscroll = '1'
-let g:neoterm_size = 10
-let g:neoterm_automap_keys = '<F5>'
-
-" emmet-vim settings
-let g:user_emmet_mode='iv'
-let g:user_emmet_leader_key = '<C-z>'
-let g:user_emmet_install_global = 0
-autocmd FileType html,htmldjango,eruby,css EmmetInstall
-
-" vim-airline settings
-set noshowmode
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#tab_min_count = 2
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#tabline#show_buffers = 0
-let g:airline#extensions#neomake#enabled = 1
-let g:airline_exclude_preview = 1
-let g:airline_powerline_fonts = 1 
-
-" vim-gitgutter settings
-set updatetime=200
-let g:gitgutter_enabled = 1
-let g:gitgutter_signs = 1
-let g:gitgutter_highlight_lines = 0
-let g:gitgutter_grep = 'rg'
-
-" NERDTree settings
-let NERDTreeWinSize = 30
-
-" Tagbar settings
-let g:tagbar_width = 30
-
-" delimitMate settings
-let delimitMate_expand_cr = 1
-
-" indentLine settings
-let g:indentLine_char = '.'
-let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_leadingSpaceChar = '.'
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_guide_size = 1
-
-" UltiSnips settings
-let g:UltiSnipsExpandTrigger="<C-b>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-
-" fugitive settings
-autocmd User fugitive
-  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
-  \   nnoremap <buffer> .. :edit %:h<CR> |
-  \ endif
-autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " denite.nvim settings
 call denite#custom#option('default', {
@@ -136,10 +73,6 @@ if has('nvim') && &runtimepath =~# '\/cpsm'
                 \ 'buffer,file_mru,file_old,file_rec,file/rec,grep,mpc,line',
                 \ 'matchers', ['matcher_cpsm', 'matcher_fuzzy'])
 endif
-
-" denite.nvim SORTER
-" Default is 'sorter_rank'
-call denite#custom#source('z', 'sorters', ['sorter_z'])
 
 " denite.nvim COMMAND
 call denite#custom#var('file_rec', 'command',
@@ -169,3 +102,67 @@ call denite#custom#map('normal', '<C-p>', '<denite:jump_to_previous_source>', 'n
 call denite#custom#map('normal', 'ss', '<denite:do_action:split>', 'noremap')
 call denite#custom#map('normal', 'vs', '<denite:do_action:vsplit>', 'noremap')
 call denite#custom#map('normal', 'ts', '<denite:do_action:tabopen>', 'noremap')
+
+" neomake setings
+call neomake#configure#automake('nirw')
+let g:neomake_python_enabled_makers = [ 'flake8', 'pep8' ]
+" let g:neomake_open_list = 2
+" let g:neomake_list_height = 5
+
+" neoterm settings
+let g:neoterm_autoscroll = '1'
+let g:neoterm_size = 10
+let g:neoterm_automap_keys = '<F5>'
+
+" emmet-vim settings
+let g:user_emmet_mode='iv'
+let g:user_emmet_leader_key = '<C-z>'
+let g:user_emmet_install_global = 0
+autocmd FileType html,htmldjango,eruby,css EmmetInstall
+
+" UltiSnips settings
+let g:UltiSnipsExpandTrigger="<C-b>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+let g:UltiSnipsSnippetDirectories=[$HOME."/.config/nvim/UltiSnips", "Ultisnips"]
+
+" fugitive settings
+autocmd User fugitive
+  \ if fugitive#buffer().type() =~# '^\%(tree\|blob\)$' |
+  \   nnoremap <buffer> .. :edit %:h<CR> |
+  \ endif
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" vim-gitgutter settings
+set updatetime=200
+let g:gitgutter_enabled = 1
+let g:gitgutter_signs = 1
+let g:gitgutter_highlight_lines = 0
+let g:gitgutter_grep = 'rg'
+
+" NERDTree settings
+let NERDTreeWinSize = 30
+
+" Tagbar settings
+let g:tagbar_width = 30
+
+" delimitMate settings
+let delimitMate_expand_cr = 1
+
+" indentLine settings
+let g:indentLine_char = '.'
+let g:indentLine_leadingSpaceChar = '.'
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_bufNameExclude = ['NERD_tree.*']
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 2
+
+" vim-airline settings
+set noshowmode
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#neomake#enabled = 1
+let g:airline_exclude_preview = 1
+let g:airline_powerline_fonts = 1 

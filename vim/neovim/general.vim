@@ -68,21 +68,17 @@ set expandtab
 set autoindent
 set smartindent
 
-autocmd FileType ruby,eruby,html,htmldjango,css set tabstop=2 shiftwidth=2
+autocmd FileType ruby,eruby,html,htmldjango,css,scss,sass set tabstop=2 shiftwidth=2
 
 " Fuzzy finder
 set path+=**
 
+" Set inactive windows background differently
 hi ActiveWindow guibg=bg
 hi InactiveWindow guibg=#0F131B
 
-" Call method on window enter
-augroup WindowManagement
-  autocmd!
-  autocmd WinEnter,WinLeave * call Handle_Win_Enter()
-augroup END
+autocmd WinEnter,WinLeave * call Handle_Win_Enter()
 
-" Change highlight group of active/inactive windows
 function! Handle_Win_Enter()
-  setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
+    setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 endfunction
