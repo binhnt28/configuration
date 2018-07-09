@@ -49,6 +49,7 @@ let g:deoplete#sources#jedi#server_timeout = 30
 let g:deoplete#sources#jedi#statement_length = 30
 let g:deoplete#sources#jedi#show_docstring = 1
 let g:deoplete#sources#jedi#short_types = 1
+let g:deoplete#sources#jedi#python_path = $HOME.'/.local/share/nvim/python-env/bin/python'
 
 " denite.nvim settings
 call denite#custom#option('default', {
@@ -111,7 +112,7 @@ let g:neomake_python_enabled_makers = [ 'flake8', 'pep8' ]
 
 " neoterm settings
 let g:neoterm_autoscroll = '1'
-let g:neoterm_size = 10
+let g:neoterm_size = 15
 let g:neoterm_automap_keys = '<F5>'
 
 " emmet-vim settings
