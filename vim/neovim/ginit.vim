@@ -1,1 +1,1 @@
-GuiFont Ubuntu Mono:h12
+GuiFont! UbuntuMono Nerd Font:h12

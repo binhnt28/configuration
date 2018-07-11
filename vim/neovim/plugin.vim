@@ -56,9 +56,9 @@ call denite#custom#option('default', {
             \ 'auto_accel': v:true,
             \ 'auto_resume': v:true,
             \ 'highlight_mode_normal': 'Cursor',
-            \ 'highlight_mode_insert': 'StatusLine',
-            \ 'highlight_matched_char': 'DiffChange',
-            \ 'highlight_matched_range': 'Operator',
+            \ 'highlight_mode_insert': 'IncSearch',
+            \ 'highlight_matched_char': 'Directory',
+            \ 'highlight_matched_range': 'None',
             \ 'highlight_preview_line': 'Search',
             \ 'prompt': '> ',
             \ 'source_names': 'short',
@@ -157,6 +157,10 @@ let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_bufNameExclude = ['NERD_tree.*']
 let g:WebDevIconsNerdTreeGitPluginForceVAlign = 2
 
+" vim-test settings
+let test#strategy = "neoterm"
+let g:test#preserve_screen = 1
+
 " vim-airline settings
 set noshowmode
 let g:airline#extensions#tabline#enabled = 1
@@ -167,3 +171,6 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#neomake#enabled = 1
 let g:airline_exclude_preview = 1
 let g:airline_powerline_fonts = 1 
+
+" onedark settings
+let g:onedark_terminal_italics = 1

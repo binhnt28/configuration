@@ -64,7 +64,7 @@ nmap <leader>p "+p
 nmap <leader>P "+P
 
 "-------------------------------
-" ---- SPECIFIC PLUGIN MAPPING ----
+" ---SPECIFIC PLUGIN MAPPING ---
 "-------------------------------
 
 " NERDTree toggle
@@ -97,3 +97,10 @@ nmap <silent> <C-p> :Denite file_rec<CR>
 nmap <silent> <leader>b :Denite buffer<CR>
 nmap <silent> <leader>/ :Denite grep:. -mode=normal<CR>
 nmap <silent> <leader>. :DeniteCursorWord grep:. -mode=normal<CR>
+
+" vim-test mapping
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>

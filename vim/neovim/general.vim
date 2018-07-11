@@ -57,18 +57,8 @@ set splitright
 if has ('nvim') || has('termguicolors')
     set termguicolors
 endif
-colorscheme onehalfdark
-let g:airline_theme='deus'
-
-" TAB settings
-set tabstop=4
-set shiftwidth=4
-set shiftround
-set expandtab
-set autoindent
-set smartindent
-
-autocmd FileType ruby,eruby,html,htmldjango,css,scss,sass set tabstop=2 shiftwidth=2
+colorscheme onedark
+let g:airline_theme='onedark'
 
 " Fuzzy finder
 set path+=**
@@ -77,8 +67,8 @@ set path+=**
 hi ActiveWindow guibg=bg
 hi InactiveWindow guibg=#0F131B
 
-autocmd WinEnter,WinLeave * call Handle_Win_Enter()
+autocmd WinEnter,WinLeave * call handleWinSwitch()
 
-function! Handle_Win_Enter()
+function! handleWinSwitch()
     setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 endfunction
