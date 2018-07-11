@@ -67,8 +67,8 @@ set path+=**
 hi ActiveWindow guibg=bg
 hi InactiveWindow guibg=#0F131B
 
-autocmd WinEnter,WinLeave * call handleWinSwitch()
+autocmd WinEnter,WinLeave * call HandleWinSwitch()
 
-function! handleWinSwitch()
+function! HandleWinSwitch()
     setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
 endfunction
