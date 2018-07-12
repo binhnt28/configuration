@@ -83,14 +83,16 @@ imap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 imap <expr><C-z> deoplete#undo_completion()
 
 " Neoterm mapping
-nnoremap <leader>` :Tmap 
-nnoremap <silent> <leader>c :Tclear<CR>
-nnoremap <silent> <leader>% :vertical Topen<CR>
-nnoremap <silent> <leader>- :botright Topen<CR>
 tnoremap <ESC> <C-\><C-n>
-nnoremap <leader>rl :TREPLSendLine<CR>
-nnoremap <leader>rf :TREPLSendFile<CR>
-vnoremap <leader>rs :TREPLSendSelection<CR>
+nmap <silent> <leader>tn :botright Tnew<CR>
+nmap <silent> <leader>to :botright Topen<CR>
+nmap <silent> <leader>tt :tab Tnew<CR> :tabnext<CR>
+nmap <silent> <leader>tq :Tclose<CR>
+nmap <silent> <leader>tc :Tclear<CR>
+nmap <silent> <leader>tm :Tmap 
+nmap <leader>rl :TREPLSendLine<CR>
+nmap <leader>rf :TREPLSendFile<CR>
+vmap <leader>rs :TREPLSendSelection<CR>
 
 " denite mapping
 nmap <silent> <C-p> :Denite file_rec<CR>
@@ -99,8 +101,8 @@ nmap <silent> <leader>/ :Denite grep:. -mode=normal<CR>
 nmap <silent> <leader>. :DeniteCursorWord grep:. -mode=normal<CR>
 
 " vim-test mapping
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
+nmap t<C-n> :TestNearest<CR>
+nmap t<C-f> :TestFile<CR>
+nmap t<C-s> :TestSuite<CR>
+nmap t<C-l> :TestLast<CR>
+nmap t<C-g> :TestVisit<CR>

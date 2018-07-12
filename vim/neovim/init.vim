@@ -11,7 +11,6 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
 Plug 'ap/vim-css-color', { 'for': ['css'] }
 Plug 'shmargum/vim-sass-colors'
 Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-endwise'
 Plug 'sheerun/vim-polyglot'
 
 " Text object
@@ -22,9 +21,14 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" Useful tools
+" Markdown
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+
+" Useful tools to make life easier
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-endwise'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/denite.nvim'

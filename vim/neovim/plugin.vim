@@ -14,12 +14,9 @@ call deoplete#custom#source('_',
     \ 'disabled_syntaxes', ['Comment', 'String'])
 
 call deoplete#custom#source('_',
-    \ 'matchers', ['matcher_cpsm', 'matcher_full_fuzzy'])
+    \ 'matchers', ['matcher_cpsm'])
 
 call deoplete#custom#source('omni', 'functions', {
-    \ 'html': 'htmlcomplete#CompleteTags',
-    \ 'xml': 'htmlcomplete#CompleteTags',
-    \ 'md': 'htmlcomplete#CompleteTags',
     \ 'css': 'csscomplete#CompleteCSS',
     \ 'scss': 'csscomplete#CompleteCSS',
     \ 'sass': 'csscomplete#CompleteCSS', 
@@ -28,9 +25,6 @@ call deoplete#custom#source('omni', 'functions', {
     \})
 
 call deoplete#custom#var('omni', 'input_patterns', {
-    \ 'html': '<[^>]*',
-    \ 'xml': '<[^>]*',
-    \ 'md': '<[^>]*',
     \ 'css': '\w{2,}[):-]?\s*\w*',
     \ 'scss': '\w{2,}[):-]?\s*\w*',
     \ 'sass': '\w{2,}[):-]?\s*\w*',
@@ -60,7 +54,7 @@ call denite#custom#option('default', {
 	\ 'auto_resume': v:true,
 	\ 'highlight_mode_normal': 'Cursor',
 	\ 'highlight_mode_insert': 'IncSearch',
-	\ 'highlight_matched_char': 'Directory',
+	\ 'highlight_matched_char': 'WarningMsg',
 	\ 'highlight_matched_range': 'None',
 	\ 'highlight_preview_line': 'Search',
 	\ 'prompt': '> ',
@@ -118,14 +112,14 @@ let g:neomake_python_enabled_makers = [ 'flake8', 'pep8' ]
 
 " neoterm settings
 let g:neoterm_autoscroll = '1'
-let g:neoterm_size = 15
+let g:neoterm_size = 12
 let g:neoterm_automap_keys = '<F5>'
 
 " emmet-vim settings
 let g:user_emmet_mode='iv'
 let g:user_emmet_leader_key = '<C-z>'
 let g:user_emmet_install_global = 0
-autocmd FileType html,htmldjango,eruby,css EmmetInstall
+autocmd FileType html,htmldjango,eruby,css,scss EmmetInstall
 
 " UltiSnips settings
 let g:UltiSnipsExpandTrigger="<C-b>"
