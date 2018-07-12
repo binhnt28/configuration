@@ -34,6 +34,7 @@ Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
 Plug 'machakann/vim-highlightedyank'
 Plug 'Yggdroot/indentLine'
 Plug 'janko-m/vim-test'
+Plug 'nixprime/cpsm', { 'do': 'sh install.sh PY3=ON' }
 
 " Interface
 Plug 'vim-airline/vim-airline'
