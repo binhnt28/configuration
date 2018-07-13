@@ -21,6 +21,8 @@ let g:elite_mode = 1
 "set textwidth=80
 "set colorcolumn=+1
 
+autocmd FileType css,scss set tabstop=2 shiftwidth=2
+
 set expandtab
 set shiftround
 
@@ -68,7 +70,7 @@ set path+=**
 
 " Set inactive windows background differently
 hi ActiveWindow guibg=bg
-hi InactiveWindow guibg=#0F131B
+hi InactiveWindow guibg=#0F131B guibg=#0F131B
 
 autocmd WinEnter,WinLeave * call HandleWinSwitch()
 

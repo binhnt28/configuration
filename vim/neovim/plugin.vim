@@ -15,6 +15,9 @@ let g:neoterm_autoscroll = '1'
 let g:neoterm_size = 12
 let g:neoterm_automap_keys = '<F5>'
 
+" vim-pandoc settings
+let g:pandoc#modules#disabled = ['folding']
+
 " emmet-vim settings
 let g:user_emmet_mode='iv'
 let g:user_emmet_leader_key = '<C-z>'
@@ -62,10 +65,8 @@ let g:test#preserve_screen = 1
 
 " vim-airline settings
 set noshowmode
-let g:airline_extensions = [
-    \ 'quickfix', 'fugitiveline', 'branch', 'hunks',
-    \ 'wordcount', 'tabline', 'neomake']
 
+let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#show_close_button = 0
