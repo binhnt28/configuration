@@ -8,7 +8,7 @@ Plug 'zchee/deoplete-jedi'
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
-Plug 'ap/vim-css-color', { 'for': ['css'] }
+Plug 'ap/vim-css-color'
 Plug 'shmargum/vim-sass-colors'
 Plug 'tomtom/tcomment_vim'
 Plug 'sheerun/vim-polyglot'

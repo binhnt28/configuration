@@ -16,15 +16,11 @@ set nowrap
 " Don't use arrow
 let g:elite_mode = 1
 
-" wrap lines 
-"set wrap
-"set textwidth=80
-"set colorcolumn=+1
-
-autocmd FileType css,scss set tabstop=2 shiftwidth=2
-
+" set tabstop=4
+" set shiftwidth=4
+set smartindent
+set autoindent
 set expandtab
-set shiftround
 
 set shada='300,<50,@100,s10,h
 
@@ -33,7 +29,6 @@ set ignorecase
 set smartcase
 set incsearch
 set showmatch
-"set hlsearch
 
 " live substitution
 set inccommand=nosplit
@@ -70,7 +65,7 @@ set path+=**
 
 " Set inactive windows background differently
 hi ActiveWindow guibg=bg
-hi InactiveWindow guibg=#0F131B guibg=#0F131B
+hi InactiveWindow guibg=#0F131B
 
 autocmd WinEnter,WinLeave * call HandleWinSwitch()
 

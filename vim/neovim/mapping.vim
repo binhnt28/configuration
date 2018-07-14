@@ -67,6 +67,9 @@ nmap <leader>P "+P
 " ---SPECIFIC PLUGIN MAPPING ---
 "-------------------------------
 
+" Update plogin
+nmap <F8> :PlugUpdate<CR>
+
 " NERDTree toggle
 map <silent> <F2> :NERDTreeToggle<CR>
 

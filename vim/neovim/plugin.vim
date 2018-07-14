@@ -54,9 +54,12 @@ let g:tagbar_width = 30
 let delimitMate_expand_cr = 1
 
 " indentLine settings
+let g:indentLine_concealcursor = &concealcursor
+let g:indentLine_conceallevel = 2
 let g:indentLine_char = '.'
 let g:indentLine_leadingSpaceChar = '.'
 let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_bufTypeExclude = ['help', 'terminal', 'nofile']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', '_.*']
 
 " vim-test settings
