@@ -79,6 +79,9 @@ map <silent> <F3> :TagbarToggle<CR>
 " vim-gitgutter toggle
 map <silent> <F5> :GitGutterLineHighlightsToggle<CR>
 
+" vim-markdown-composer toggle
+map m<C-P> :ComposerStart<CR>
+
 " deoplete
 imap <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 imap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"

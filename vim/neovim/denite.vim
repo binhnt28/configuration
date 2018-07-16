@@ -18,7 +18,7 @@ call denite#custom#option('default', {
 call denite#custom#source('tag', 'matchers', ['matcher_substring'])
 call denite#custom#source(
         \ 'buffer,file_mru,file_old,file_rec,file/rec,grep,mpc,line',
-        \ 'matchers', ['matcher/cpsm', 'matcher/regexp'])
+        \ 'matchers', ['matcher/cpsm'])
 
 " denite.nvim SORTER
 call denite#custom#source(

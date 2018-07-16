@@ -8,9 +8,10 @@ Plug 'zchee/deoplete-jedi'
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
-Plug 'ap/vim-css-color'
+Plug 'ap/vim-css-color', { 'for': ['css'] }
 Plug 'shmargum/vim-sass-colors'
 Plug 'tomtom/tcomment_vim'
+Plug 'plytophogy/vim-virtualenv'
 Plug 'sheerun/vim-polyglot'
 
 " Text object
@@ -19,11 +20,15 @@ Plug 'michaeljsmith/vim-indent-object'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Markdown
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'euclio/vim-markdown-composer', {
+                        \ 'on': 'ComposerStart',
+                        \ 'do': 'cargo build --release' 
+                        \}
 
 " Useful tools to make life easier
 Plug 'tpope/vim-surround'
@@ -44,15 +49,12 @@ Plug 'nixprime/cpsm', { 'do': 'sh install.sh PY3=ON' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
-Plug 'tomasr/molokai'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'tomasr/molokai'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'joshdick/onedark.vim'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
+" Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 call plug#end()
-
-" Add custom snippets for UltiSnips
-set runtimepath+=$HOME/.local/share/nvim/plugged/my-snippets
 
 source $HOME/.config/nvim/plugin.vim
 source $HOME/.config/nvim/general.vim

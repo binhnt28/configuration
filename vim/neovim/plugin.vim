@@ -6,7 +6,7 @@ source $HOME/.config/nvim/denite.vim
 
 " neomake setings
 call neomake#configure#automake('nirw')
-let g:neomake_python_enabled_makers = [ 'flake8', 'pep8' ]
+let g:neomake_python_enabled_makers = [ 'pycodestyle', 'python' ]
 " let g:neomake_open_list = 2
 " let g:neomake_list_height = 5
 
@@ -14,9 +14,6 @@ let g:neomake_python_enabled_makers = [ 'flake8', 'pep8' ]
 let g:neoterm_autoscroll = '1'
 let g:neoterm_size = 12
 let g:neoterm_automap_keys = '<F5>'
-
-" vim-pandoc settings
-let g:pandoc#modules#disabled = ['folding']
 
 " emmet-vim settings
 let g:user_emmet_mode='iv'
@@ -43,6 +40,13 @@ let g:gitgutter_enabled = 1
 let g:gitgutter_signs = 1
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_grep = 'rg'
+
+" vim-pandoc settings
+let g:pandoc#modules#disabled = ['folding', 'bibliographies']
+
+" vim-markdown-composer settings
+let g:markdown_composer_autostart = 0
+let g:markdown_composer_external_renderer='pandoc -f markdown -t html'
 
 " NERDTree settings
 let NERDTreeWinSize = 30
@@ -77,6 +81,9 @@ let g:airline#extensions#tabline#show_buffers = 0
 
 let g:airline_exclude_preview = 1
 let g:airline_powerline_fonts = 1 
+
+" vim-devicon settings
+let g:webdevicons_enable_nerdtree = 0
 
 " onedark settings
 let g:onedark_terminal_italics = 1
