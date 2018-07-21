@@ -10,22 +10,11 @@ let g:neomake_python_enabled_makers = [ 'pycodestyle', 'python' ]
 " let g:neomake_open_list = 2
 " let g:neomake_list_height = 5
 
-" neoterm settings
-let g:neoterm_autoscroll = '1'
-let g:neoterm_size = 12
-let g:neoterm_automap_keys = '<F5>'
-
 " emmet-vim settings
 let g:user_emmet_mode='iv'
 let g:user_emmet_leader_key = '<C-z>'
 let g:user_emmet_install_global = 0
 autocmd FileType html,htmldjango,eruby,css,scss EmmetInstall
-
-" UltiSnips settings
-let g:UltiSnipsExpandTrigger="<C-b>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-let g:UltiSnipsSnippetDirectories=[$HOME."/.config/nvim/UltiSnips", "Ultisnips"]
 
 " fugitive settings
 autocmd User fugitive
@@ -48,6 +37,12 @@ let g:pandoc#modules#disabled = ['folding', 'bibliographies']
 let g:markdown_composer_autostart = 0
 let g:markdown_composer_external_renderer='pandoc -f markdown -t html'
 
+" UltiSnips settings
+let g:UltiSnipsExpandTrigger="<C-b>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+let g:UltiSnipsSnippetDirectories=[$HOME."/.config/nvim/UltiSnips", "Ultisnips"]
+
 " NERDTree settings
 let NERDTreeWinSize = 30
 
@@ -65,6 +60,11 @@ let g:indentLine_leadingSpaceChar = '.'
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_bufTypeExclude = ['help', 'terminal', 'nofile']
 let g:indentLine_bufNameExclude = ['NERD_tree.*', '_.*']
+
+" neoterm settings
+let g:neoterm_autoscroll = '1'
+let g:neoterm_size = 12
+let g:neoterm_automap_keys = '<F5>'
 
 " vim-test settings
 let test#strategy = "neoterm"

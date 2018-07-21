@@ -77,7 +77,7 @@ map <silent> <F2> :NERDTreeToggle<CR>
 map <silent> <F3> :TagbarToggle<CR>
 
 " vim-gitgutter toggle
-map <silent> <F5> :GitGutterLineHighlightsToggle<CR>
+map <silent> <F6> :GitGutterLineHighlightsToggle<CR>
 
 " vim-markdown-composer toggle
 map m<C-P> :ComposerStart<CR>
@@ -90,6 +90,7 @@ imap <expr><C-z> deoplete#undo_completion()
 
 " Neoterm mapping
 tnoremap <ESC> <C-\><C-n>
+nmap , :T 
 nmap <silent> <leader>tn :botright Tnew<CR>
 nmap <silent> <leader>to :botright Topen<CR>
 nmap <silent> <leader>tt :tab Tnew<CR> :tabnext<CR>

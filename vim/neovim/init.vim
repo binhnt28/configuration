@@ -2,8 +2,11 @@ set nocompatible
 
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Syntax
+Plug 'sheerun/vim-polyglot'
+
 " General programming support
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
@@ -12,7 +15,12 @@ Plug 'ap/vim-css-color', { 'for': ['css'] }
 Plug 'shmargum/vim-sass-colors'
 Plug 'tomtom/tcomment_vim'
 Plug 'plytophogy/vim-virtualenv'
-Plug 'sheerun/vim-polyglot'
+
+" Language Server Protocol
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh'
+"     \}
 
 " Text object
 Plug 'michaeljsmith/vim-indent-object'
@@ -36,7 +44,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-endwise'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Shougo/denite.nvim'
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kassio/neoterm'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
