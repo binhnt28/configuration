@@ -34,9 +34,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'euclio/vim-markdown-composer', {
-                        \ 'on': 'ComposerStart',
-                        \ 'do': 'cargo build --release' 
-                        \}
+    \ 'on': 'ComposerStart',
+    \ 'do': 'cargo build --release' 
+    \}
 
 " Useful tools to make life easier
 Plug 'tpope/vim-surround'

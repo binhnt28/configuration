@@ -1,0 +1,35 @@
+snippet mod
+module ${1:ModuleName}
+	${0:${VISUAL}}
+end
+endsnippet
+
+snippet def
+def ${1:method_name}
+	${0:${VISUAL:method_body}}
+end
+endsnippet
+
+snippet if
+if ${1:expression}
+	${0:${VISUAL:statements}}
+end
+endsnippet
+
+snippet desc
+describe '$1' do
+	${0:${VISUAL:block}}
+end
+endsnippet
+
+snippet it
+it '${1:spec_name}' do
+	${0:${VISUAL:block}}
+end
+endsnippet
+
+snippet con "context"
+context '$1' do
+	${0:${VISUAL:block}}
+end
+endsnippet
