@@ -18,6 +18,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-L> <C-W><C-L>
 
+" Navigation when in insert mode
+imap <A-j> <C-o>j
+imap <A-k> <C-o>k
+imap <A-h> <C-o>h
+imap <A-l> <C-o>l
+
 " Disable arrow
 if get(g:, 'elite_mode')
     nnoremap <Up>    <C-W>+
