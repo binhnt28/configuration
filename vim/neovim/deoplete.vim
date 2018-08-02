@@ -45,4 +45,3 @@ let g:deoplete#sources#jedi#server_timeout = 30
 let g:deoplete#sources#jedi#statement_length = 30
 let g:deoplete#sources#jedi#show_docstring = 1
 let g:deoplete#sources#jedi#short_types = 1
-" let g:deoplete#sources#jedi#python_path = $HOME.'/.local/share/nvim/python-env/bin/python'

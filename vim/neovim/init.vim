@@ -1,4 +1,5 @@
 set nocompatible
+set sw=2 " Use this default if vim-polyglot does not define it
 
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -7,19 +8,13 @@ Plug 'sheerun/vim-polyglot'
 
 " General programming support
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
 Plug 'ap/vim-css-color', { 'for': ['css'] }
 Plug 'tomtom/tcomment_vim'
-Plug 'plytophogy/vim-virtualenv'
-
-" Language Server Protocol
-" Plug 'autozimu/LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh'
-"     \}
+Plug 'plytophogy/vim-virtualenv', { 'for': ['python'] }
 
 " Text object
 Plug 'michaeljsmith/vim-indent-object'
@@ -27,7 +22,6 @@ Plug 'michaeljsmith/vim-indent-object'
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
 
 " Markdown
 Plug 'vim-pandoc/vim-pandoc'

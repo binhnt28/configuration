@@ -53,7 +53,7 @@ let g:tagbar_width = 30
 let delimitMate_expand_cr = 1
 
 " indentLine settings
-let g:indentLine_concealcursor = &concealcursor
+let g:indentLine_concealcursor = 'ic'
 let g:indentLine_conceallevel = 2
 let g:indentLine_char = '.'
 let g:indentLine_leadingSpaceChar = '.'
@@ -70,6 +70,10 @@ let g:neoterm_automap_keys = '<F5>'
 let test#strategy = "neoterm"
 let g:test#preserve_screen = 1
 
+" vim-illuminate
+let g:Illuminate_ftblacklist = ['nerdtree', 'neoterm']
+hi link illuminatedWord Visual
+
 " vim-airline settings
 set noshowmode
 
@@ -81,9 +85,6 @@ let g:airline#extensions#tabline#show_buffers = 0
 
 let g:airline_exclude_preview = 1
 let g:airline_powerline_fonts = 1 
-
-" vim-devicon settings
-let g:webdevicons_enable_nerdtree = 0
 
 " onedark settings
 let g:onedark_terminal_italics = 1

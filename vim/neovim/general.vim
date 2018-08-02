@@ -16,8 +16,6 @@ set nowrap
 " Don't use arrow
 let g:elite_mode = 1
 
-" set tabstop=4
-" set shiftwidth=4
 set smartindent
 set autoindent
 set expandtab

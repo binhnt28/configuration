@@ -32,6 +32,38 @@ if get(g:, 'elite_mode')
     nnoremap <Right> <C-W>>
 endif
 
+" Quickfix mapping
+nmap q<C-o> :copen<CR>
+nmap q<C-q> :cclose<CR>
+nmap ]q :cnext<CR>
+nmap [q :cprevious<CR>
+
+"---------- Highlight next search matching ----------
+
+function! HLNext (blinktime)
+  let [bufnum, lnum, col, off] = getpos('.')
+  let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+  let target_pat = '\c\%#'.@/
+  let blinks = 3
+  for n in range(1, blinks)
+    let ring = matchadd('DiffDelete', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+  endfor
+endfunction
+
+nnoremap <silent> n n:call HLNext(0.2)<CR>
+nnoremap <silent> N N:call HLNext(0.2)<CR>
+
+"---------- Drag Visual ----------
+vmap K xkP`[V`]
+vmap J xp`[V`]
+vmap H <gv
+vmap L >gv
+
 "---------- Surround Shortcuts ----------
 
 " Surround a word(s) with double-quotes
@@ -109,8 +141,8 @@ vmap <leader>rs :TREPLSendSelection<CR>
 
 " denite mapping
 nmap <silent> <C-p> :Denite file_rec<CR>
-nmap <silent> <leader>b :Denite buffer<CR>
-nmap <silent> <leader>/ :Denite grep:. -mode=normal<CR>
+nmap <silent> <leader>b :Denite buffer -mode=normal<CR>
+nmap <silent> <leader>/ :Denite grep -mode=normal<CR>
 nmap <silent> <leader>. :DeniteCursorWord grep:. -mode=normal<CR>
 
 " vim-test mapping
