@@ -45,14 +45,11 @@ function! HLNext (blinktime)
   let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
   let target_pat = '\c\%#'.@/
   let blinks = 3
-  for n in range(1, blinks)
-    let ring = matchadd('DiffDelete', target_pat, 101)
-    redraw
-    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-    call matchdelete(ring)
-    redraw
-    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-  endfor
+  let ring = matchadd('DiffDelete', target_pat, 101)
+  redraw
+  exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+  call matchdelete(ring)
+  redraw
 endfunction
 
 nnoremap <silent> n n:call HLNext(0.2)<CR>
