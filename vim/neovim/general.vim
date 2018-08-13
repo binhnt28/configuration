@@ -20,8 +20,6 @@ set smartindent
 set autoindent
 set expandtab
 
-set shada='300,<50,@100,s10,h
-
 " searching
 set ignorecase
 set smartcase

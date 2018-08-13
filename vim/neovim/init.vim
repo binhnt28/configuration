@@ -9,10 +9,10 @@ Plug 'sheerun/vim-polyglot'
 " General programming support
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
-Plug 'tpope/vim-rails'
+" Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
-Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
-Plug 'ap/vim-css-color', { 'for': ['css'] }
+" Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
+" Plug 'ap/vim-css-color', { 'for': ['css'] }
 Plug 'tomtom/tcomment_vim'
 Plug 'plytophogy/vim-virtualenv', { 'for': ['python'] }
 
@@ -34,7 +34,7 @@ Plug 'euclio/vim-markdown-composer', {
 " Useful tools to make life easier
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-endwise'
+" Plug 'tpope/vim-endwise'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
