@@ -24,7 +24,7 @@ autocmd User fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " vim-gitgutter settings
-set updatetime=200
+set updatetime=500
 let g:gitgutter_enabled = 1
 let g:gitgutter_signs = 1
 let g:gitgutter_highlight_lines = 0
@@ -63,16 +63,12 @@ let g:indentLine_bufNameExclude = ['NERD_tree.*', '_.*']
 
 " neoterm settings
 let g:neoterm_autoscroll = '1'
-let g:neoterm_size = 12
+" let g:neoterm_size = 12
 let g:neoterm_automap_keys = '<F5>'
 
 " vim-test settings
 let test#strategy = "neoterm"
 let g:test#preserve_screen = 1
-
-" vim-illuminate
-let g:Illuminate_ftblacklist = ['nerdtree', 'neoterm']
-hi link illuminatedWord Visual
 
 " vim-airline settings
 set noshowmode

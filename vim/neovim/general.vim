@@ -29,7 +29,6 @@ set showmatch
 " live substitution
 set inccommand=nosplit
 
-set ruler
 set colorcolumn=81
 
 " set linenumber
@@ -58,13 +57,3 @@ let g:airline_theme='onedark'
 
 " Fuzzy finder
 set path+=**
-
-" Set inactive windows background differently
-hi ActiveWindow guibg=bg
-hi InactiveWindow guibg=#0F131B
-
-autocmd WinEnter,WinLeave * call HandleWinSwitch()
-
-function! HandleWinSwitch()
-    setlocal winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
-endfunction

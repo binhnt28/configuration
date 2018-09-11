@@ -126,9 +126,9 @@ imap <expr><C-z> deoplete#undo_completion()
 " Neoterm mapping
 tnoremap <ESC> <C-\><C-n>
 nmap , :T 
-nmap <silent> <leader>tn :botright Tnew<CR>
-nmap <silent> <leader>to :botright Topen<CR>
-nmap <silent> <leader>tt :tab Tnew<CR> :tabnext<CR>
+nmap <silent> <leader>" :bot Tnew<CR>
+nmap <silent> <leader>% :vert Tnew<CR>
+nmap <silent> <leader>c :tab Tnew<CR>
 nmap <silent> <leader>tq :Tclose<CR>
 nmap <silent> <leader>tc :Tclear<CR>
 nmap <silent> <leader>tm :Tmap 

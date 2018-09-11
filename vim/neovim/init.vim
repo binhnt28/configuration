@@ -11,8 +11,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
 " Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
-" Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
-" Plug 'ap/vim-css-color', { 'for': ['css'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
+Plug 'ap/vim-css-color', { 'for': ['css'] }
 Plug 'tomtom/tcomment_vim'
 Plug 'plytophogy/vim-virtualenv', { 'for': ['python'] }
 
@@ -38,6 +38,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/defx.nvim', { 'do': 'UpdateRemotePlugins' }
 Plug 'kassio/neoterm'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }
