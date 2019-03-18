@@ -137,7 +137,7 @@ nmap <leader>rf :TREPLSendFile<CR>
 vmap <leader>rs :TREPLSendSelection<CR>
 
 " denite mapping
-nmap <silent> <C-p> :Denite file_rec<CR>
+nmap <silent> <C-p> :Denite file/rec<CR>
 nmap <silent> <leader>b :Denite buffer -mode=normal<CR>
 nmap <silent> <leader>/ :Denite grep -mode=normal<CR>
 nmap <silent> <leader>. :DeniteCursorWord grep:. -mode=normal<CR>

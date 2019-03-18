@@ -26,7 +26,7 @@ call denite#custom#source(
         \ 'sorters', ['sorter/sublime'])
 
 " denite.nvim COMMAND
-call denite#custom#var('file_rec', 'command',
+call denite#custom#var('file/rec', 'command',
         \ ['rg', '--files', '--glob', '!.git'])
 call denite#custom#var('grep', 'command', ['rg'])
 call denite#custom#var('grep', 'default_opts',

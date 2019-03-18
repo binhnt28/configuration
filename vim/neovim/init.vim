@@ -9,15 +9,16 @@ Plug 'sheerun/vim-polyglot'
 " General programming support
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
 " Plug 'tpope/vim-rails'
-Plug 'neomake/neomake'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
 Plug 'ap/vim-css-color', { 'for': ['css'] }
 Plug 'tomtom/tcomment_vim'
 Plug 'plytophogy/vim-virtualenv', { 'for': ['python'] }
-
-" Text object
-Plug 'michaeljsmith/vim-indent-object'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -34,11 +35,9 @@ Plug 'vim-pandoc/vim-pandoc-syntax'
 " Useful tools to make life easier
 Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
-" Plug 'tpope/vim-endwise'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'Shougo/defx.nvim', { 'do': 'UpdateRemotePlugins' }
 Plug 'kassio/neoterm'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar', { 'on': 'TagbarToggle' }

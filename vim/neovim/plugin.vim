@@ -5,10 +5,11 @@ source $HOME/.config/nvim/deoplete.vim
 source $HOME/.config/nvim/denite.vim
 
 " neomake setings
-call neomake#configure#automake('nirw')
-let g:neomake_python_enabled_makers = [ 'pycodestyle', 'python' ]
+" call neomake#configure#automake('nirw')
+" let g:neomake_python_enabled_makers = [ "pycodestyle", "python3" ]
+" let g:neomake_javascript_enabled_makers = ['eslint']
 " let g:neomake_open_list = 2
-" let g:neomake_list_height = 5
+" let g:neomake_list_height = 6
 
 " emmet-vim settings
 let g:user_emmet_mode='iv'
@@ -27,6 +28,7 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 set updatetime=500
 let g:gitgutter_enabled = 1
 let g:gitgutter_signs = 1
+let g:gitgutter_max_signs = 1000
 let g:gitgutter_highlight_lines = 0
 let g:gitgutter_grep = 'rg'
 
