@@ -1,5 +1,10 @@
+let g:python3_host_prog = $HOME.'/.local/share/nvim/python-env/bin/python'
+
+" coc.nvim settings
+source $HOME/.config/nvim/coc.vim
+
 " deoplete settings
-source $HOME/.config/nvim/deoplete.vim
+" source $HOME/.config/nvim/deoplete.vim
 
 " denite settings
 source $HOME/.config/nvim/denite.vim
@@ -25,7 +30,6 @@ autocmd User fugitive
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 " vim-gitgutter settings
-set updatetime=500
 let g:gitgutter_enabled = 1
 let g:gitgutter_signs = 1
 let g:gitgutter_max_signs = 1000
@@ -40,10 +44,9 @@ let g:markdown_composer_autostart = 0
 let g:markdown_composer_external_renderer='pandoc -f markdown -t html'
 
 " UltiSnips settings
-let g:UltiSnipsExpandTrigger="<C-b>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsExpandTrigger="<C-y>"
+let g:UltiSnipsJumpForwardTrigger="<C-y>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-let g:UltiSnipsSnippetDirectories=[$HOME."/.config/nvim/UltiSnips", "Ultisnips"]
 
 " NERDTree settings
 let NERDTreeWinSize = 30
@@ -83,6 +86,9 @@ let g:airline#extensions#tabline#show_buffers = 0
 
 let g:airline_exclude_preview = 1
 let g:airline_powerline_fonts = 1 
+
+let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
+let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 " onedark settings
 let g:onedark_terminal_italics = 1

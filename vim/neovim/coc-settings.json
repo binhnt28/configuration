@@ -1,0 +1,17 @@
+{
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.preferCompleteThanJumpPlaceholder": true,
+  "diagnostic.refreshAfterSave": true,
+  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.errorSign": "!!",
+  "pyls.enable": true,
+  "pyls.commandPath": "/Users/nguyentbinh/Library/Python/3.7/bin/pyls",
+  "pyls.plugins.pydocstyle.enabled": false,
+  "languageserver": {
+    "dockerfile": {
+      "command": "/Users/nguyentbinh/.local/share/nvim/node_modules/dockerfile-language-server-nodejs/bin/docker-langserver",
+      "filetypes": ["Dockerfile"],
+      "args": ["--stdio"]
+    }
+  }
+}

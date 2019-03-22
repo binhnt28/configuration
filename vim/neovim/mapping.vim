@@ -1,6 +1,3 @@
-" Change <leader> key
-let g:mapleader = "\<Space>"
-
 " Let ; be also :
 noremap ; :
 
@@ -115,13 +112,13 @@ map <silent> <F3> :TagbarToggle<CR>
 map <silent> <F6> :GitGutterLineHighlightsToggle<CR>
 
 " vim-markdown-composer toggle
-map m<C-P> :ComposerStart<CR>
+" map m<C-P> :ComposerStart<CR>
 
 " deoplete
-imap <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-imap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-imap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-imap <expr><C-z> deoplete#undo_completion()
+" imap <expr><tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" imap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+" imap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+" imap <expr><C-z> deoplete#undo_completion()
 
 " Neoterm mapping
 tnoremap <ESC> <C-\><C-n>

@@ -7,12 +7,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'sheerun/vim-polyglot'
 
 " General programming support
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': { -> coc#util#install() } }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'zchee/deoplete-jedi', { 'for': ['python'] }
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
 
 " Plug 'tpope/vim-rails'
 Plug 'mattn/emmet-vim', { 'for': ['html', 'scss', 'css', 'eruby'] }
@@ -56,6 +57,8 @@ Plug 'joshdick/onedark.vim'
 " Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 call plug#end()
+
+let g:mapleader = "\<Space>"
 
 source $HOME/.config/nvim/plugin.vim
 source $HOME/.config/nvim/general.vim
